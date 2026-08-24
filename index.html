@@ -617,6 +617,16 @@
       text-transform: uppercase;
     }
 
+    .plan-card.associate-plan {
+      border-color: rgba(21, 81, 143, 0.3);
+      box-shadow: 0 18px 42px rgba(7, 39, 73, 0.1);
+    }
+
+    .plan-badge.current-rate {
+      color: var(--white);
+      background: linear-gradient(135deg, var(--sapphire-700), var(--sapphire-950));
+    }
+
     .plan-icon {
       width: 54px;
       height: 54px;
@@ -671,6 +681,53 @@
 
     .featured .plan-note {
       color: var(--silver-300);
+    }
+
+    .plan-price-alert {
+      display: grid;
+      gap: 4px;
+      margin-top: 17px;
+      padding: 12px 14px;
+      border-left: 3px solid var(--sapphire-600);
+      border-radius: 0 8px 8px 0;
+      background: #eef4fa;
+    }
+
+    .plan-price-alert strong {
+      color: var(--sapphire-800);
+      font-size: 0.79rem;
+      line-height: 1.35;
+    }
+
+    .plan-price-alert span {
+      color: var(--silver-700);
+      font-size: 0.74rem;
+      line-height: 1.5;
+    }
+
+    .plan-disclosure {
+      margin-top: 14px;
+      color: var(--silver-700);
+      font-size: 0.72rem;
+      line-height: 1.65;
+    }
+
+    .plan-terms-link {
+      display: inline;
+      padding: 0;
+      border: 0;
+      color: var(--sapphire-700);
+      background: transparent;
+      font: inherit;
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      cursor: pointer;
+    }
+
+    .plan-terms-link:hover,
+    .plan-terms-link:focus-visible {
+      color: var(--sapphire-950);
     }
 
     .plan-card.recommended {
@@ -1025,6 +1082,26 @@
       line-height: 1.7;
     }
 
+    #membershipTermsModal .privacy-dialog {
+      width: min(760px, 100%);
+      max-height: min(84vh, 880px);
+    }
+
+    .privacy-dialog .terms-list {
+      display: grid;
+      gap: 8px;
+      margin: 12px 0 0 20px;
+      color: var(--silver-300);
+      font-size: 0.88rem;
+      line-height: 1.65;
+    }
+
+    .privacy-dialog a {
+      color: var(--white);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
     .privacy-updated {
       margin-top: 12px !important;
       color: var(--silver-500) !important;
@@ -1348,19 +1425,28 @@
 
         <div class="membership-panel" id="supplierPlans" role="tabpanel" aria-labelledby="supplierTab">
           <div class="plans-grid">
-            <article class="plan-card">
+            <article class="plan-card associate-plan">
+              <div class="plan-badge current-rate">Current Membership Rate</div>
               <div class="plan-icon">◇</div>
               <h3>Associate Supplier</h3>
               <div class="plan-price">CAD $99 <span>/ year</span></div>
               <div class="plan-note">The starting point for new Guild suppliers</div>
+              <div class="plan-price-alert">
+                <strong>Current membership rate: CAD $99 per year</strong>
+                <span>Membership pricing may be subject to change. Existing members will be notified before any renewal fee changes.</span>
+              </div>
               <ul class="plan-list">
                 <li>Official Associate Supplier Membership</li>
                 <li>Digital Membership Certificate and ID</li>
                 <li>Submit gemstones for purchasing consideration</li>
                 <li>Eligibility to apply for Verified Supplier status</li>
-                <li>Annual membership renewal</li>
+                <li>Automatic annual renewal; cancel any time</li>
               </ul>
               <a href="suppliers.html#supplier-membership" class="btn btn-primary">View Associate Membership</a>
+              <p class="plan-disclosure">
+                CAD $99 per year. Automatically renews unless cancelled. Full refund if your application is declined.
+                <button type="button" class="plan-terms-link" id="openAssociateMembershipTerms">Read Associate Supplier Membership Terms</button>.
+              </p>
             </article>
 
             <article class="plan-card recommended">
@@ -1538,28 +1624,28 @@
     <div class="privacy-dialog" tabindex="-1">
       <button class="privacy-close" id="closePrivacyPolicy" type="button" aria-label="Close privacy policy">✕</button>
       <h2 id="privacyTitle">Privacy Policy</h2>
-      <p class="privacy-updated">Last updated: August 1, 2026</p>
+      <p class="privacy-updated">Last updated: August 24, 2026</p>
 
       <h3>Information we collect</h3>
-      <p>We may collect information you provide through membership applications, contact forms, newsletter signups or direct communications, including your name, business name, email address, phone number and information about your gemstone or jewellery business.</p>
+      <p>We may collect information you provide through membership applications, contact forms, newsletter signups or direct communications, including your name, business name, email address, phone number and information about your gemstone or jewellery business. When reasonably necessary to verify an application, we may also request government-issued identification, business registration information or supporting product documentation.</p>
 
       <h3>How we use information</h3>
-      <p>We use this information to review membership applications, communicate with members and applicants, provide Guild services, improve our website, maintain records and send updates that you have requested.</p>
+      <p>We use this information to review membership applications, verify identity or business information, prevent fraud, administer memberships and renewals, communicate with members and applicants, provide Guild services, maintain records and send updates that you have requested.</p>
 
       <h3>Payments and third-party services</h3>
-      <p>Payments and certain forms may be processed by trusted third-party providers. Those providers handle information under their own privacy policies. We do not intend to store full payment-card details on this website.</p>
+      <p>Payments, application forms and supporting records may be processed or stored by authorized third-party service providers involved in payment processing, membership administration, document handling or verification. We do not intend to store full payment-card details on this website.</p>
 
       <h3>Sharing of information</h3>
-      <p>We do not sell personal information. We may share information with service providers when needed to operate the Guild, process applications or comply with legal obligations.</p>
+      <p>We do not sell personal information. We may share information with authorized service providers when needed to operate the Guild, process applications, verify information or comply with legal obligations. Identification documents will not be shared with potential buyers or referring members without permission, unless disclosure is required or permitted by law.</p>
 
       <h3>Data retention and protection</h3>
-      <p>We retain information only for as long as reasonably required for membership administration, business records and legal obligations. We use reasonable safeguards, but no online system can guarantee absolute security.</p>
+      <p>We retain personal information and identification documents only for as long as reasonably required for their stated purposes, membership administration, business records or applicable legal obligations. Access is limited to authorized individuals or service providers, and we use reasonable safeguards appropriate to the sensitivity of the information.</p>
 
       <h3>Your choices</h3>
       <p>You may request access to, correction of or deletion of your personal information, subject to applicable recordkeeping requirements. You may also unsubscribe from promotional emails at any time.</p>
 
       <h3>Contact us</h3>
-      <p>For privacy questions or requests, contact us at <a href="mailto:info@canadiangemtradeguild.ca">info@canadiangemtradeguild.ca</a>.</p>
+      <p>For privacy questions or requests, contact us at <a href="mailto:memberships@canadiangemtradeguild.ca">memberships@canadiangemtradeguild.ca</a>.</p>
     </div>
   </div>
 
@@ -1567,41 +1653,110 @@
   <div class="privacy-modal" id="membershipTermsModal" role="dialog" aria-modal="true" aria-labelledby="membershipTermsTitle" aria-hidden="true">
     <div class="privacy-dialog" tabindex="-1">
       <button class="privacy-close" id="closeMembershipTerms" type="button" aria-label="Close terms of membership">✕</button>
-      <h2 id="membershipTermsTitle">Terms of Membership</h2>
-      <p class="privacy-updated">Last updated: August 1, 2026</p>
+      <h2 id="membershipTermsTitle">Associate Supplier Membership Terms</h2>
+      <p class="privacy-updated">Last updated: August 24, 2026</p>
 
-      <h3>Membership eligibility</h3>
-      <p>Membership is available to applicants who meet the eligibility requirements for the selected membership category and provide complete, accurate and current information. Submitting an application does not guarantee acceptance.</p>
+      <h3>1. Membership Purpose</h3>
+      <p>The Associate Supplier Membership program is operated by Canadian Gem Trade Guild. References to “the Guild,” “we,” “us,” or “our” mean Canadian Gem Trade Guild.</p>
+      <p>The Canadian Gem Trade Guild provides a structured membership program for gemstone and jewellery suppliers interested in exploring opportunities within the Canadian market.</p>
+      <p>The Guild acts as an intermediary between suppliers and potential buyers and may facilitate product submissions, evaluations and communication regarding potential purchasing opportunities.</p>
 
-      <h3>Application and review</h3>
-      <p>The Canadian Gem Trade Guild may review business information, references, documents and other materials reasonably required to assess an application. We may request additional information, approve an application, decline it or place it on hold at our discretion.</p>
+      <h3>2. Membership Eligibility</h3>
+      <p>Associate Supplier Membership is available to individuals and businesses involved in gemstone mining, trading, sourcing, manufacturing or jewellery production.</p>
+      <p>Applicants must provide accurate information about their identity, business activities and products.</p>
+      <p>Membership applications may require a valid referral code and supporting identification or business documentation.</p>
+      <p>Other membership tiers, including Verified Supplier and Partner Supplier memberships, may be subject to additional eligibility requirements, fees and separate terms and conditions.</p>
 
-      <h3>Membership fees</h3>
-      <p>Membership fees, billing periods and included benefits will be shown before payment. Unless otherwise stated in writing, fees are non-transferable and are not refundable once an application review or membership period has begun.</p>
+      <h3>3. Membership Fee</h3>
+      <p>The current Associate Supplier Membership fee is CAD $99 per year. Membership pricing may be subject to change.</p>
+      <p>The applicable membership fee will be disclosed before payment. Existing members will be notified of any change to their renewal fee before the next scheduled renewal.</p>
+      <p>Payment must be completed before the membership application is reviewed.</p>
+      <p>Payment does not guarantee membership approval and does not represent a gemstone purchase, deposit, investment or guarantee of future business.</p>
 
-      <h3>Member responsibilities</h3>
-      <p>Members must act honestly and professionally, follow applicable laws, accurately describe gemstones and jewellery, disclose known treatments or material facts, respect confidential information and avoid misleading, fraudulent or abusive conduct.</p>
+      <h3>4. Application Review</h3>
+      <p>Applications are reviewed by the Membership Committee.</p>
+      <p>Applicants may be asked to provide additional information or identification documents during the review process.</p>
+      <p>The Guild aims to provide an initial response within 12 business days of receiving a completed application. Additional time may be required if further information or verification is necessary.</p>
 
-      <h3>Verification and Guild status</h3>
-      <p>Guild membership or verification reflects the information reviewed at a particular time. It is not a guarantee of any member, gemstone, transaction, product quality, legal compliance, financial performance or future conduct.</p>
+      <h3>5. Approval and Membership Period</h3>
+      <p>Membership becomes active once the application has been approved and the applicant receives written confirmation from the Guild.</p>
+      <p>The annual billing period begins on the date the initial membership payment is processed. Membership benefits become available upon approval and remain active for the remainder of the current paid annual billing period.</p>
+      <p>If an application is declined, the subscription will be cancelled and the initial membership fee will be refunded in full.</p>
 
-      <h3>Use of Guild name and materials</h3>
-      <p>Members may use approved membership badges, directory listings or Guild materials only in the manner authorized by the Guild. Membership does not transfer ownership of the Guild name, logo, website content or other intellectual property.</p>
+      <h3>6. Refund Policy</h3>
+      <p>If a membership application is declined, the membership fee will be refunded in full.</p>
+      <p>After membership has been approved and activated, the annual membership fee is generally non-refundable, except where a refund is required by applicable law.</p>
+      <p>A lack of purchasing opportunities, product submissions, offers or completed sales does not automatically entitle a member to a refund.</p>
 
-      <h3>Buyer connections and transactions</h3>
-      <p>The Guild may facilitate introductions, visibility or access to trade opportunities, but it does not guarantee buyer interest, sales, pricing, payment or transaction completion. Members remain responsible for their own due diligence, agreements, taxes, shipping, insurance and legal obligations.</p>
+      <h3>7. No Guaranteed Purchases or Sales</h3>
+      <p>Membership does not guarantee:</p>
+      <ul class="terms-list">
+        <li>The purchase of any gemstone or jewellery.</li>
+        <li>A specific number of product evaluations or purchasing opportunities.</li>
+        <li>Direct introductions to buyers.</li>
+        <li>A minimum sales volume, purchase price or profit.</li>
+        <li>Market entry, business partnerships, immigration assistance or visa approval.</li>
+      </ul>
+      <p>Any purchasing opportunity depends on buyer requirements, product suitability, pricing, documentation, market conditions and other relevant considerations.</p>
 
-      <h3>Suspension or termination</h3>
-      <p>Membership may be suspended, restricted or terminated for non-payment, false information, misuse of Guild materials, serious complaints, unlawful conduct, conduct that may harm the Guild or its members, or breach of these terms. Where appropriate, the member may be given an opportunity to respond.</p>
+      <h3>8. Product Information and Disclosure</h3>
+      <p>Members must provide accurate and complete information about products submitted for consideration. This includes, where applicable:</p>
+      <ul class="terms-list">
+        <li>Gemstone type, weight and dimensions.</li>
+        <li>Known treatments or enhancements.</li>
+        <li>Whether a gemstone is natural, laboratory-grown, synthetic or imitation.</li>
+        <li>Country of origin, when known.</li>
+        <li>Laboratory reports or certifications.</li>
+        <li>Product condition, availability and asking price.</li>
+      </ul>
+      <p>The Guild may decline to consider products where information is incomplete, misleading, unverifiable or inconsistent with applicable requirements.</p>
 
-      <h3>Changes to membership</h3>
-      <p>Membership benefits, fees, standards and these terms may be updated from time to time. Material changes will be communicated through the website, email or another reasonable method. Continued membership after an update takes effect constitutes acceptance of the revised terms.</p>
+      <h3>9. Purchasing Arrangements</h3>
+      <p>The Guild facilitates communication and purchasing opportunities between suppliers and potential buyers.</p>
+      <p>Any purchase or sale must be agreed upon separately and may include additional terms regarding price, inspection, payment, shipping, insurance, customs and delivery.</p>
+      <p>Membership does not require the Guild or any buyer to purchase products.</p>
+      <p>Members must not ship gemstones or jewellery unless they have received clear written instructions regarding the proposed shipment.</p>
 
-      <h3>Limitation of responsibility</h3>
-      <p>To the fullest extent permitted by law, the Guild is not responsible for indirect losses, lost profits, failed transactions or disputes between members, buyers, suppliers or third parties arising from membership, introductions or use of Guild services.</p>
+      <h3>10. Identification and Privacy</h3>
+      <p>Applicants may be asked to provide government-issued identification or business registration information for identity verification, membership administration and fraud prevention.</p>
+      <p>Personal information and identification documents will be accessed only by authorized individuals or service providers involved in membership administration or verification.</p>
+      <p>Identification documents will not be shared with potential buyers or referring members without permission, unless disclosure is required or permitted by law.</p>
+      <p>Information will be retained only for as long as reasonably necessary for the stated purposes or applicable legal obligations.</p>
+      <p>Privacy-related questions may be directed to <a href="mailto:memberships@canadiangemtradeguild.ca">memberships@canadiangemtradeguild.ca</a>.</p>
 
-      <h3>Contact us</h3>
-      <p>Questions about these terms may be sent to <a href="mailto:info@canadiangemtradeguild.ca">info@canadiangemtradeguild.ca</a>.</p>
+      <h3>11. Confidentiality</h3>
+      <p>Members must respect the confidentiality of information shared during the membership and purchasing process.</p>
+      <p>This includes non-public information relating to buyers, suppliers, pricing, product evaluations and business arrangements.</p>
+      <p>The Guild is not required to disclose the identities or contact information of potential buyers or other suppliers.</p>
+
+      <h3>12. Membership Renewal</h3>
+      <p>Associate Supplier Membership is an automatically renewing annual subscription.</p>
+      <p>By purchasing a membership, the member authorizes Canadian Gem Trade Guild to charge the payment method provided for the applicable annual membership fee upon each renewal. The current annual membership fee is CAD $99.</p>
+      <p>Membership will automatically renew every 12 months on the anniversary of the original payment date unless the member cancels before the next scheduled renewal date.</p>
+      <p>Members may cancel their subscription at any time by contacting <a href="mailto:memberships@canadiangemtradeguild.ca">memberships@canadiangemtradeguild.ca</a>. Cancellation prevents future renewal charges, but the membership remains active until the end of the current paid membership period.</p>
+      <p>Membership fees that have already been charged are non-refundable, except where required by applicable law.</p>
+      <p>Any changes to the annual membership fee will be communicated before the next renewal charge, and members may cancel before the new charge takes effect.</p>
+      <p>If an application is declined, the subscription will be cancelled and the initial membership fee will be refunded in full.</p>
+
+      <h3>13. Suspension or Termination</h3>
+      <p>The Canadian Gem Trade Guild reserves the right to suspend or terminate a membership at any time if a member:</p>
+      <ul class="terms-list">
+        <li>Provides false or misleading information.</li>
+        <li>Conceals gemstone treatments or other material product details.</li>
+        <li>Submits fraudulent identification, certifications or documentation.</li>
+        <li>Engages in unlawful, abusive or inappropriate conduct.</li>
+        <li>Misuses the Guild’s name, reputation or confidential information.</li>
+        <li>Fails to follow applicable membership requirements or policies.</li>
+        <li>Engages in any activity that may compromise the integrity, safety or reputation of the Guild, its members or its buyers.</li>
+      </ul>
+      <p>Membership may be suspended or terminated without prior notice where appropriate.</p>
+      <p>Members whose memberships are suspended or terminated are not entitled to a refund of their membership fees, except where required by applicable law.</p>
+      <p>Upon termination, all membership privileges and access to Guild-related opportunities end immediately.</p>
+
+      <h3>14. Acceptance of Terms</h3>
+      <p>By accepting these terms at checkout, proceeding with payment and submitting a membership application, the applicant confirms that they have read, understood and accepted these Associate Supplier Membership Terms.</p>
+      <p>Questions may be directed to:</p>
+      <p>Membership Committee<br />Canadian Gem Trade Guild<br /><a href="mailto:memberships@canadiangemtradeguild.ca">memberships@canadiangemtradeguild.ca</a><br /><a href="https://www.canadiangemtradeguild.ca/">www.canadiangemtradeguild.ca</a></p>
     </div>
   </div>
 
@@ -1644,11 +1799,13 @@
     const newsletterForm = document.getElementById("newsletterForm");
     const formMessage = document.getElementById("formMessage");
 
-    newsletterForm.addEventListener("submit", (event) => {
-      event.preventDefault();
-      formMessage.style.display = "block";
-      newsletterForm.reset();
-    });
+    if (newsletterForm && formMessage) {
+      newsletterForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        formMessage.style.display = "block";
+        newsletterForm.reset();
+      });
+    }
 
     const privacyModal = document.getElementById("privacyModal");
     const privacyDialog = privacyModal.querySelector(".privacy-dialog");
@@ -1681,6 +1838,7 @@
     const membershipTermsModal = document.getElementById("membershipTermsModal");
     const membershipTermsDialog = membershipTermsModal.querySelector(".privacy-dialog");
     const openMembershipTerms = document.getElementById("openMembershipTerms");
+    const openAssociateMembershipTerms = document.getElementById("openAssociateMembershipTerms");
     const closeMembershipTerms = document.getElementById("closeMembershipTerms");
     let membershipTermsTrigger = null;
 
@@ -1700,11 +1858,23 @@
     }
 
     openMembershipTerms.addEventListener("click", openMembershipTermsModal);
+    openAssociateMembershipTerms.addEventListener("click", openMembershipTermsModal);
     closeMembershipTerms.addEventListener("click", closeMembershipTermsModal);
 
     membershipTermsModal.addEventListener("click", (event) => {
       if (event.target === membershipTermsModal) closeMembershipTermsModal();
     });
+
+    function openPolicyFromHash() {
+      if (window.location.hash === "#membership-terms") {
+        openMembershipTermsModal();
+      } else if (window.location.hash === "#privacy-policy") {
+        openPrivacyModal();
+      }
+    }
+
+    window.addEventListener("hashchange", openPolicyFromHash);
+    openPolicyFromHash();
 
     document.addEventListener("keydown", (event) => {
       if (event.key !== "Escape") return;
