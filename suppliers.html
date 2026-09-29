@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Supplier membership with the Canadian Gem Trade Guild — build credibility, complete verification and explore Canadian gemstone purchasing opportunities." />
+  <meta name="description" content="Supplier membership with the Canadian Gem Trade Guild — complete supplier verification, submit gemstones and jewellery, and build professional opportunities through the Guild." />
   <title>Supplier Membership | Canadian Gem Trade Guild</title>
   <link rel="icon" type="image/png" href="cgtg-nav-logo.png" />
   <link rel="apple-touch-icon" href="cgtg-nav-logo.png" />
@@ -404,7 +404,7 @@
 
     .trust-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       background: var(--white);
       border: 1px solid var(--silver-200);
       border-radius: var(--radius-lg);
@@ -1467,20 +1467,77 @@
       background: linear-gradient(180deg, var(--silver-100), #ffffff);
     }
 
+    .process-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      margin-top: 8px;
+      flex-wrap: wrap;
+    }
+
+    .process-control {
+      min-width: 132px;
+      min-height: 48px;
+      padding: 10px 18px;
+      border: 1px solid var(--silver-200);
+      border-radius: 999px;
+      background: var(--white);
+      color: var(--sapphire-950);
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    }
+
+    .process-control:hover {
+      transform: translateY(-2px);
+      border-color: var(--silver-300);
+      box-shadow: 0 8px 22px rgba(3, 16, 31, 0.08);
+    }
+
+    .process-control:focus-visible {
+      outline: 3px solid rgba(31, 79, 132, 0.25);
+      outline-offset: 3px;
+    }
+
+    .process-control-hint {
+      color: var(--silver-500);
+      font-size: 0.8rem;
+      text-align: center;
+    }
+
     .process-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      display: flex;
       gap: 18px;
       margin-top: 52px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 8px max(24px, calc((100% - min(78vw, 520px)) / 2)) 24px;
+      scroll-snap-type: x mandatory;
+      scroll-padding-inline: max(24px, calc((100% - min(78vw, 520px)) / 2));
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      overscroll-behavior-x: contain;
     }
+
+    .process-grid::-webkit-scrollbar { display: none; }
 
     .process-card {
       position: relative;
+      flex: 0 0 min(78vw, 520px);
+      min-height: 320px;
       padding: 30px 25px;
       border: 1px solid var(--silver-200);
       border-radius: var(--radius-md);
       background: var(--white);
       box-shadow: 0 12px 30px rgba(3, 16, 31, 0.06);
+      scroll-snap-align: center;
+      filter: blur(var(--card-blur, 0px));
+      opacity: var(--card-opacity, 1);
+      transform: scale(var(--card-scale, 1));
+      transition: filter 180ms ease, opacity 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+      will-change: filter, opacity, transform;
     }
 
     .process-number {
@@ -1582,14 +1639,115 @@
     .supplier-cta .section-title { color: var(--white); }
     .supplier-cta .section-copy { color: var(--silver-300); }
 
+    /* The Guild Difference */
+    .guild-difference {
+      padding: 115px 0;
+      background: var(--white);
+    }
+
+    .guild-difference-header {
+      max-width: 760px;
+      margin: 0 auto 54px;
+      text-align: center;
+    }
+
+    .guild-difference-header .eyebrow {
+      justify-content: center;
+    }
+
+    .guild-difference-header .eyebrow::after {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .guild-pillars {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .guild-pillar {
+      position: relative;
+      min-height: 270px;
+      padding: 30px 25px;
+      border: 1px solid var(--silver-200);
+      border-radius: var(--radius-md);
+      background: var(--silver-50);
+      box-shadow: 0 12px 30px rgba(3, 16, 31, 0.05);
+      overflow: hidden;
+    }
+
+    .guild-pillar::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--sapphire-700), var(--silver-300));
+    }
+
+    .guild-pillar-number {
+      margin-bottom: 22px;
+      color: var(--silver-500);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+    }
+
+    .guild-pillar h3 {
+      font-family: "Cormorant Garamond", serif;
+      color: var(--sapphire-950);
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .guild-pillar p {
+      margin-top: 14px;
+      color: var(--silver-700);
+      font-size: 0.86rem;
+      line-height: 1.65;
+    }
+
+    .guild-difference-signature {
+      display: grid;
+      gap: 8px;
+      margin: 38px auto 0;
+      padding-top: 28px;
+      border-top: 1px solid var(--silver-200);
+      text-align: center;
+    }
+
+    .guild-difference-signature strong {
+      color: var(--sapphire-950);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.65rem;
+      line-height: 1.15;
+    }
+
+    .guild-difference-signature span {
+      color: var(--silver-500);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
     @media (max-width: 980px) {
       .intro-grid,
       .requirements-grid,
       .supplier-cta-grid { grid-template-columns: 1fr; }
 
-      .process-grid { grid-template-columns: repeat(2, 1fr); }
       .supplier-plans { grid-template-columns: 1fr; max-width: 650px; margin-inline: auto; }
       .intro-image { min-height: 460px; }
+    }
+
+    @media (max-width: 980px) {
+      .guild-pillars {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     @media (max-width: 720px) {
@@ -1601,14 +1759,46 @@
         transform: none;
       }
       .supplier-hero h1 { font-size: clamp(3rem, 15vw, 4.25rem); }
+      .guild-difference { padding: 82px 0; }
+
+      .guild-pillars {
+        grid-template-columns: 1fr;
+      }
+
+      .guild-pillar {
+        min-height: auto;
+      }
+
       .supplier-intro,
       .supplier-process,
       .requirements,
       .supplier-membership,
       .supplier-cta { padding: 82px 0; }
-      .process-grid,
       .requirements-list { grid-template-columns: 1fr; }
       .intro-image { min-height: 350px; }
+    }
+
+    /* Basic site-wide entrance animation */
+    .site-animate {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 650ms ease, transform 650ms ease;
+    }
+
+    .site-animate.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .site-animate,
+      .site-animate.is-visible,
+      .process-card,
+      .process-control {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+      }
     }
 
   </style>
@@ -1656,10 +1846,10 @@
         <div class="hero-kicker">For gemstone suppliers</div>
         <h1><span class="hero-line">Build trust.</span><span class="hero-line">Present your</span><span class="hero-line accent">gemstones professionally.</span></h1>
         <p>
-          Supplier membership provides individuals and businesses with a structured pathway to present gemstones to the Guild, strengthen professional credibility and be considered for Guild purchasing opportunities.
+          Supplier membership provides individuals and businesses with a structured pathway to join the Guild, complete supplier verification, submit gemstones and jewellery, and build professional opportunities through the Guild.
         </p>
         <div class="hero-actions">
-          <a href="#supplier-membership" class="btn btn-primary">View Memberships</a>
+          <a href="https://buy.stripe.com/4gMbJ1dVO32jahfcJv1oI00" class="btn btn-primary">Apply Now</a>
           <a href="#supplier-process" class="btn btn-outline">See How It Works</a>
         </div>
       </div>
@@ -1668,12 +1858,8 @@
     <section class="trust-strip" aria-label="Supplier membership advantages">
       <div class="container trust-grid">
         <article class="trust-item">
-          <div class="trust-icon">✓</div>
-          <div><strong>Structured Profile</strong><p>Present your gemstone activities through an organized supplier profile.</p></div>
-        </article>
-        <article class="trust-item">
           <div class="trust-icon">◇</div>
-          <div><strong>Guild Consideration</strong><p>Become eligible to submit gemstones for the Guild’s purchasing consideration.</p></div>
+          <div><strong>Guild Consideration</strong><p>Become eligible to submit gemstones and jewellery to the Guild for review and potential opportunities.</p></div>
         </article>
         <article class="trust-item">
           <div class="trust-icon">▤</div>
@@ -1681,7 +1867,7 @@
         </article>
         <article class="trust-item">
           <div class="trust-icon">↗</div>
-          <div><strong>Professional Readiness</strong><p>Prepare for responsible and organized engagement with the Guild.</p></div>
+          <div><strong>Professional Readiness</strong><p>Communicate professionally with the Guild and keep your supplier information current.</p></div>
         </article>
       </div>
     </section>
@@ -1690,15 +1876,10 @@
       <div class="container intro-grid">
         <div>
           <div class="eyebrow">Supplier opportunity</div>
-          <h2 class="section-title">A professional pathway within Canada’s gemstone trade.</h2>
+          <h2 class="section-title">A professional membership pathway for gemstone and jewellery suppliers.</h2>
           <p class="section-copy">
-            The Guild is designed for suppliers who want to operate with greater credibility, organization and professional standards. Membership does not guarantee a purchase, but it creates a structured pathway for gemstone submissions, Guild review and future opportunities.
+            The Guild is designed for suppliers who want to operate with greater credibility, organization and professional standards. Approved members receive a digital Guild membership card and may submit gemstones and jewellery for Guild review and potential opportunities. The Guild may introduce a member to a prospective buyer when a suitable opportunity arises, but membership does not guarantee a specific number of introductions, inquiries, transactions or sales.
           </p>
-          <div class="intro-points">
-            <div class="intro-point"><div class="intro-point-icon">01</div><div><strong>Build credibility</strong><p>Demonstrate that you have completed a structured Guild application and review process.</p></div></div>
-            <div class="intro-point"><div class="intro-point-icon">02</div><div><strong>Present gemstones clearly</strong><p>Use consistent descriptions, images, pricing and documentation when submitting gemstones to the Guild.</p></div></div>
-            <div class="intro-point"><div class="intro-point-icon">03</div><div><strong>Engage professionally</strong><p>Build a responsible and organized relationship directly with the Canadian Gem Trade Guild.</p></div></div>
-          </div>
         </div>
         <div class="intro-image" role="img" aria-label="Certified sapphires, gemological report and professional appraisal tools"></div>
       </div>
@@ -1708,14 +1889,62 @@
       <div class="container">
         <div class="section-heading-center">
           <div class="eyebrow">Supplier journey</div>
-          <h2 class="section-title">A clear four-step membership process.</h2>
-          <p class="section-copy">Each stage helps the Guild understand your background, gemstone experience and readiness for professional membership.</p>
+          <h2 class="section-title">A clear membership process from payment to approval.</h2>
+          <p class="section-copy">The Guild handles supplier membership communication by email and reviews applications before approving membership.</p>
         </div>
         <div class="process-grid">
-          <article class="process-card"><div class="process-number">1</div><h3>Complete Payment</h3><p>Review the membership terms and complete your annual Associate Supplier membership payment securely through Stripe.</p></article>
-          <article class="process-card"><div class="process-number">2</div><h3>Submit Application</h3><p>Provide your applicant details, referral code, gemstone experience and business or personal trading information.</p></article>
-          <article class="process-card"><div class="process-number">3</div><h3>Membership Review</h3><p>The Membership Committee aims to provide an initial response within 12 business days of receiving a completed application.</p></article>
-          <article class="process-card"><div class="process-number">4</div><h3>Approval &amp; Activation</h3><p>Approved applicants receive written confirmation. If an application is declined, the membership fee is refunded in full.</p></article>
+          <article class="process-card"><div class="process-number">1</div><h3>Complete Payment</h3><p>Review the membership terms and complete the applicable annual membership payment securely through Stripe.</p></article>
+          <article class="process-card"><div class="process-number">2</div><h3>Submit Application</h3><p>After payment, complete the supplier application with your required personal, business and gemstone information, including a valid referral code.</p></article>
+          <article class="process-card"><div class="process-number">3</div><h3>Provide ID</h3><p>Provide the required government-issued identification and business registration information, where applicable.</p></article>
+          <article class="process-card"><div class="process-number">4</div><h3>Guild Review</h3><p>The Guild reviews the application and verification information. Any additional requests are handled by email.</p></article>
+          <article class="process-card"><div class="process-number">5</div><h3>Approval</h3><p>Once the Guild approves the application, you receive written confirmation by email.</p></article>
+          <article class="process-card"><div class="process-number">6</div><h3>Digital Membership Card</h3><p>Your digital Guild membership card is sent by email and shows your member name, business name when applicable, member ID and current membership period.</p></article>
+        </div>
+        <div class="process-controls" aria-label="Membership process navigation">
+          <button type="button" class="process-control" id="processPrev" aria-label="Previous membership step">← <span>Previous</span></button>
+          <div class="process-control-hint" aria-live="polite">Use the buttons or scroll to move through the steps</div>
+          <button type="button" class="process-control" id="processNext" aria-label="Next membership step"><span>Next</span> →</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="guild-difference" aria-labelledby="guildDifferenceTitle">
+      <div class="container">
+        <div class="guild-difference-header">
+          <div class="eyebrow">The Guild Difference</div>
+          <h2 class="section-title" id="guildDifferenceTitle">A professional foundation for your gemstone business.</h2>
+          <p class="section-copy">Membership is built around a clear process that helps suppliers establish credibility, present their gemstones professionally and build a lasting relationship with the Guild.</p>
+        </div>
+
+        <div class="guild-pillars">
+          <article class="guild-pillar">
+            <div class="guild-pillar-number">01</div>
+            <h3>Verify</h3>
+            <p>Your identity and business information are reviewed as part of the Guild membership process.</p>
+          </article>
+
+          <article class="guild-pillar">
+            <div class="guild-pillar-number">02</div>
+            <h3>Present</h3>
+            <p>Submit your gemstones and jewellery through a structured process designed for clear, professional presentation.</p>
+          </article>
+
+          <article class="guild-pillar">
+            <div class="guild-pillar-number">03</div>
+            <h3>Support</h3>
+            <p>If a submission is not attracting interest, the Guild may work with you to identify ways to improve its presentation.</p>
+          </article>
+
+          <article class="guild-pillar">
+            <div class="guild-pillar-number">04</div>
+            <h3>Connect</h3>
+            <p>When a suitable opportunity arises, the Guild may introduce an appropriate member to a prospective buyer.</p>
+          </article>
+        </div>
+
+        <div class="guild-difference-signature">
+          <strong>Membership is more than a card. It is your relationship with the Guild.</strong>
+          <span>Trust &nbsp;•&nbsp; Transparency &nbsp;•&nbsp; Support &nbsp;•&nbsp; Opportunity</span>
         </div>
       </div>
     </section>
@@ -1725,16 +1954,16 @@
         <div>
           <div class="eyebrow">What you will need</div>
           <h2 class="section-title">Prepare for Your Membership Application</h2>
-          <p class="section-copy">Before applying for Associate Supplier Membership, please ensure you have the required information ready. A complete application helps the Membership Committee review your submission more efficiently, and supporting documents may be requested during the review.</p>
-          <div style="margin-top:30px"><a href="#supplier-membership" class="btn btn-primary">View Memberships</a></div>
+          <p class="section-copy">Before applying, please have the following information ready. The Guild uses this information to review your application and verify your identity and business information. All application communication is handled by email.</p>
+          <div style="margin-top:30px"><a href="https://buy.stripe.com/4gMbJ1dVO32jahfcJv1oI00" class="btn btn-primary">Apply Now</a></div>
         </div>
         <div class="requirements-list">
-          <div class="requirement-item"><strong>Referral Code</strong><p>A valid referral code from an approved Guild member or authorized Guild representative.</p></div>
-          <div class="requirement-item"><strong>Applicant Information</strong><p>Your legal name, contact details, location and preferred method of communication.</p></div>
-          <div class="requirement-item"><strong>Business or Personal Trading Information</strong><p>If you operate a business, provide its name, registration details and a brief introduction. If you do not have a registered business, provide information about your personal gemstone trading activities and experience.</p></div>
-          <div class="requirement-item"><strong>Gemstone Experience</strong><p>Information about your gemstone activities, trading experience and the types of gemstones you handle.</p></div>
-          <div class="requirement-item"><strong>Supporting Documents</strong><p>Government-issued identification, business registration where applicable, or other supporting documents may be requested during the Membership Committee review.</p></div>
-          <div class="requirement-item"><strong>Membership Terms and Professional Standards</strong><p>Acceptance of the Associate Supplier Membership Terms and agreement to the Guild's transparency requirements and professional conduct standards.</p></div>
+          <div class="requirement-item"><strong>Referral Code</strong><p>A valid referral code from an existing Guild member or a Guild invitation is required for the application.</p></div>
+          <div class="requirement-item"><strong>Full Name &amp; Contact Information</strong><p>Your full legal name, address, phone number and email address. Guild communication is handled by email.</p></div>
+          <div class="requirement-item"><strong>Business Information</strong><p>Your business name, address and business registration information, where applicable.</p></div>
+          <div class="requirement-item"><strong>Gemstone Types</strong><p>The types of gemstones you supply are required. The Guild accepts gemstones and jewellery; rough stones are not accepted.</p></div>
+          <div class="requirement-item"><strong>Government ID &amp; Verification</strong><p>Government-issued identification is required. The Guild may request additional information needed to verify your identity and business information.</p></div>
+          <div class="requirement-item"><strong>Optional Online Presence</strong><p>Website or social media information may be provided if available, but it is optional.</p></div>
         </div>
       </div>
     </section>
@@ -1744,7 +1973,7 @@
         <div class="section-heading-center">
           <div class="eyebrow">Supplier memberships</div>
           <h2 class="section-title">Choose the level that fits your supplier journey.</h2>
-          <p class="section-copy">Begin as an Associate Supplier and progress through the Guild as your professional relationship and trading history develop.</p>
+          <p class="section-copy">Choose the membership level that matches the level of Guild support and professional participation you want.</p>
         </div>
 
         <div class="supplier-plans">
@@ -1761,14 +1990,15 @@
 
             <div class="plan-section">
               <div class="plan-section-title">Designed For</div>
-              <p class="plan-description">Individuals and businesses beginning their relationship with the Canadian Gem Trade Guild.</p>
+              <p class="plan-description">Individuals and businesses beginning their professional relationship with the Guild and seeking core membership, verification and submission support.</p>
             </div>
 
             <div class="plan-section">
               <div class="plan-section-title">Requirements</div>
               <ul class="requirements-list-compact">
-                <li>Referral from an approved Guild member or Guild invitation</li>
-                <li>Completed Membership Admission Application</li>
+                <li>Payment through the Guild’s application process</li>
+                <li>Completed supplier application</li>
+                <li>Required government ID and business information</li>
                 <li>Successful Membership Committee review</li>
                 <li>Acceptance of the Associate Supplier Membership Terms</li>
               </ul>
@@ -1778,14 +2008,13 @@
               <div class="plan-section-title">Membership Benefits</div>
               <ul class="plan-list">
                 <li>Official Associate Supplier Membership</li>
-                <li>Digital Membership ID</li>
-                <li>Eligible to submit gemstones to the Guild for purchasing consideration</li>
-                <li>Eligible to apply for Verified Supplier Membership</li>
+                <li>Digital Guild Membership Card showing your name, business name when applicable, member ID and current membership period</li>
+                <li>Eligible to submit gemstones and jewellery to the Guild for review and potential opportunities</li>
+                <li>Supplier verification and professional submission support</li>
                 <li>Automatic annual renewal; cancel any time</li>
               </ul>
             </div>
-            <button type="button" class="btn btn-primary" disabled aria-disabled="true">Full</button>
-            <p class="payment-note">Complete your Associate Supplier membership payment securely through Stripe. Your annual billing period begins on the payment date.</p>
+            <a href="https://buy.stripe.com/4gMbJ1dVO32jahfcJv1oI00" class="btn btn-primary">Apply Now</a>
             <p class="plan-disclosure">
               CAD $99 per year. Automatically renews unless cancelled. Full refund if your application is declined.
               <button type="button" class="plan-terms-link" id="openAssociateMembershipTerms">Read Associate Supplier Membership Terms</button>.
@@ -1800,7 +2029,7 @@
 
             <div class="plan-section">
               <div class="plan-section-title">Designed For</div>
-              <p class="plan-description">Associate Suppliers who have demonstrated professionalism and maintained good standing with the Guild.</p>
+              <p class="plan-description">Established suppliers seeking enhanced Guild support, stronger professional recognition and greater participation in Guild opportunities.</p>
             </div>
 
             <div class="plan-section">
@@ -1818,9 +2047,9 @@
               <div class="plan-section-title">Membership Benefits</div>
               <ul class="plan-list">
                 <li>Official Verified Supplier Status</li>
-                <li>Physical Membership Card</li>
-                <li>Priority review of gemstone submissions</li>
-                <li>Priority consideration for Guild purchasing opportunities</li>
+                <li>Digital Guild Membership Card showing current membership information</li>
+                <li>Enhanced submission support and consideration</li>
+                <li>Priority consideration for relevant Guild opportunities</li>
                 <li>Eligibility to participate in Guild-supported Canadian trade missions, exhibitions and networking opportunities as they become available</li>
               </ul>
             </div>
@@ -1835,7 +2064,7 @@
 
             <div class="plan-section">
               <div class="plan-section-title">Designed For</div>
-              <p class="plan-description">Long-term strategic suppliers building a lasting presence in the Canadian market.</p>
+              <p class="plan-description">Suppliers seeking the Guild’s highest membership level, expanded support and a deeper professional partnership.</p>
             </div>
 
             <div class="plan-section">
@@ -1853,9 +2082,9 @@
               <ul class="plan-list">
                 <li>Guild Trade Partner Recognition</li>
                 <li>Premium Metal Membership Card</li>
-                <li>Highest priority for gemstone purchase reviews</li>
-                <li>Priority consideration for Guild purchasing opportunities</li>
-                <li>Priority invitations to Guild-supported Canadian trade missions, exhibitions and networking opportunities</li>
+                <li>Expanded submission support and priority consideration for relevant Guild opportunities</li>
+                <li>Priority consideration for relevant Guild opportunities</li>
+                <li>Priority invitations to relevant Guild-supported trade, exhibition and networking opportunities as they become available</li>
                 <li>Access to the Guild's Canadian Business Establishment Program</li>
                 <li>Introductions to trusted Canadian professionals for business incorporation, accounting, banking, legal services, and import and export guidance</li>
               </ul>
@@ -1870,10 +2099,10 @@
       <div class="container supplier-cta-grid">
         <div>
           <div class="eyebrow" style="color:var(--silver-300)">Ready to begin?</div>
-          <h2 class="section-title">Present your gemstones with greater confidence.</h2>
-          <p class="section-copy">Begin your Associate Supplier Membership application and join a professional community committed to trust, transparency and responsible gemstone trade.</p>
+          <h2 class="section-title">Build your professional presence with the Guild.</h2>
+          <p class="section-copy">Join a professional organization that helps you build opportunities through verification, professional submissions and Guild introductions when suitable opportunities arise.</p>
         </div>
-        <a href="#supplier-membership" class="btn btn-primary">View Memberships</a>
+        <a href="https://buy.stripe.com/4gMbJ1dVO32jahfcJv1oI00" class="btn btn-primary">Apply Now</a>
       </div>
     </section>
   </main>
@@ -1891,7 +2120,7 @@
               <span>Building trust. Strengthening trade.</span>
             </div>
           </a>
-          <p>A professional Canadian organization created to strengthen trust, structure and responsible practices across the gemstone trade.</p>
+          <p>A professional Canadian organization supporting trust, transparency and responsible gemstone and jewellery trade through supplier verification, submissions and introductions when suitable opportunities arise.</p>
         </div>
 
         <div class="footer-col">
@@ -1927,7 +2156,7 @@
     <div class="privacy-dialog" tabindex="-1">
       <button class="privacy-close" id="closePrivacyPolicy" type="button" aria-label="Close privacy policy">✕</button>
       <h2 id="privacyTitle">Privacy Policy</h2>
-      <p class="privacy-updated">Last updated: August 1, 2026</p>
+      <p class="privacy-updated">Last updated: September 29, 2026</p>
 
       <h3>Information we collect</h3>
       <p>We may collect information you provide through membership applications, contact forms, newsletter signups or direct communications, including your name, business name, email address, phone number and information about your gemstone or jewellery business. When reasonably necessary to verify an application, we may also request government-issued identification, business registration information or supporting product documentation.</p>
@@ -1957,32 +2186,32 @@
     <div class="privacy-dialog" tabindex="-1">
       <button class="privacy-close" id="closeMembershipTerms" type="button" aria-label="Close terms of membership">✕</button>
       <h2 id="membershipTermsTitle">Associate Supplier Membership Terms</h2>
-      <p class="privacy-updated">Last updated: August 1, 2026</p>
+      <p class="privacy-updated">Last updated: September 29, 2026</p>
 
       <h3>1. Membership Purpose</h3>
       <p>The Associate Supplier Membership program is operated by Canadian Gem Trade Guild. References to “the Guild,” “we,” “us,” or “our” mean Canadian Gem Trade Guild.</p>
       <p>The Canadian Gem Trade Guild provides a structured membership program for gemstone and jewellery suppliers interested in exploring opportunities within the Canadian market.</p>
-      <p>The Guild acts as an intermediary between suppliers and potential buyers and may facilitate product submissions, evaluations and communication regarding potential purchasing opportunities.</p>
+      <p>The Guild verifies approved suppliers, receives submissions and may introduce a member to a prospective buyer when a suitable opportunity arises. The Guild is not a public marketplace or general broker.</p>
 
       <h3>2. Membership Eligibility</h3>
-      <p>Associate Supplier Membership is available to individuals and businesses involved in gemstone mining, trading, sourcing, manufacturing or jewellery production.</p>
-      <p>Applicants must provide accurate information about their identity, business activities and products.</p>
-      <p>Membership applications may require a valid referral code and supporting identification or business documentation.</p>
-      <p>Other membership tiers, including Verified Supplier and Partner Supplier memberships, may be subject to additional eligibility requirements, fees and separate terms and conditions.</p>
+      <p>Associate Supplier Membership is available to individuals and businesses supplying gemstones and jewellery, subject to Guild requirements. Rough stones are not accepted.</p>
+      <p>Applicants must provide accurate and truthful information about their identity, business activities and products. Suppliers are responsible for the accuracy and authenticity of the information, representations, documentation and descriptions they provide.</p>
+      <p>Applicants are required to provide full name, business name where applicable, address, phone number, email address, government-issued identification and business registration information. The types of gemstones supplied are also required. Website or social media information is optional.</p>
+      <p>Other membership tiers, including Verified Supplier and Guild Trade Partner memberships, may be subject to additional eligibility requirements, fees and separate terms or guidelines.</p>
 
       <h3>3. Membership Fee</h3>
       <p>The current Associate Supplier Membership fee is CAD $99 per year. Membership pricing may be subject to change.</p>
       <p>The applicable membership fee will be disclosed before payment. Existing members will be notified of any change to their renewal fee before the next scheduled renewal.</p>
-      <p>Payment must be completed before the membership application is reviewed.</p>
+      <p>Payment is completed first. The applicant then submits the required application information, and the Guild may request identification or other supporting information by email before reviewing the application.</p>
       <p>Payment does not guarantee membership approval and does not represent a gemstone purchase, deposit, investment or guarantee of future business.</p>
 
       <h3>4. Application Review</h3>
-      <p>Applications are reviewed by the Membership Committee.</p>
-      <p>Applicants may be asked to provide additional information or identification documents during the review process.</p>
+      <p>Applications are reviewed by the Guild after the required application information and verification materials have been received.</p>
+      <p>The Guild may request government-issued identification, business registration or other supporting information by email as part of identity and business verification.</p>
       <p>The Guild aims to provide an initial response within 12 business days of receiving a completed application. Additional time may be required if further information or verification is necessary.</p>
 
       <h3>5. Approval and Membership Period</h3>
-      <p>Membership becomes active once the application has been approved and the applicant receives written confirmation from the Guild.</p>
+      <p>Membership becomes active once the application has been approved and the applicant receives written confirmation from the Guild. The digital membership card is then provided by email.</p>
       <p>The annual billing period begins on the date the initial membership payment is processed. Membership benefits become available upon approval and remain active for the remainder of the current paid annual billing period.</p>
       <p>If an application is declined, the subscription will be cancelled and the initial membership fee will be refunded in full.</p>
 
@@ -1991,16 +2220,16 @@
       <p>After membership has been approved and activated, the annual membership fee is generally non-refundable, except where a refund is required by applicable law.</p>
       <p>A lack of purchasing opportunities, product submissions, offers or completed sales does not automatically entitle a member to a refund.</p>
 
-      <h3>7. No Guaranteed Purchases or Sales</h3>
+      <h3>7. Submissions and Opportunities</h3>
       <p>Membership does not guarantee:</p>
       <ul class="terms-list">
+        <li>A specific number of introductions or inquiries.</li>
+        <li>A buyer for any submission.</li>
         <li>The purchase of any gemstone or jewellery.</li>
-        <li>A specific number of product evaluations or purchasing opportunities.</li>
-        <li>Direct introductions to buyers.</li>
         <li>A minimum sales volume, purchase price or profit.</li>
-        <li>Market entry, business partnerships, immigration assistance or visa approval.</li>
+        <li>A particular transaction value or frequency.</li>
       </ul>
-      <p>Any purchasing opportunity depends on buyer requirements, product suitability, pricing, documentation, market conditions and other relevant considerations.</p>
+      <p>The Guild may introduce a member to a prospective buyer when a suitable opportunity arises. If a submission does not attract interest, the Guild may work with the supplier to identify improvements to its market presentation, including pricing, documentation, photography, descriptions or other relevant factors. Any opportunity depends on buyer requirements, product suitability, pricing, documentation, market conditions and other relevant considerations.</p>
 
       <h3>8. Product Information and Disclosure</h3>
       <p>Members must provide accurate and complete information about products submitted for consideration. This includes, where applicable:</p>
@@ -2013,11 +2242,12 @@
         <li>Product condition, availability and asking price.</li>
       </ul>
       <p>The Guild may decline to consider products where information is incomplete, misleading, unverifiable or inconsistent with applicable requirements.</p>
+      <p>When the Guild itself has a specific gemstone purchasing need, appropriate certification or supporting documentation is required for gemstones the Guild purchases or considers for that specific need.</p>
 
       <h3>9. Purchasing Arrangements</h3>
-      <p>The Guild facilitates communication and purchasing opportunities between suppliers and potential buyers.</p>
-      <p>Any purchase or sale must be agreed upon separately and may include additional terms regarding price, inspection, payment, shipping, insurance, customs and delivery.</p>
-      <p>Membership does not require the Guild or any buyer to purchase products.</p>
+      <p>The Guild may introduce suppliers to prospective buyers. After an introduction, the supplier and buyer communicate and arrange any private transaction directly with one another.</p>
+      <p>Any purchase or sale must be agreed upon separately by the supplier and buyer, including price, inspection, payment, shipping, insurance, customs, delivery, warranties, returns, contracts, taxes and other transaction terms.</p>
+      <p>The Guild does not charge suppliers a commission on private transactions resulting from a Guild introduction. The supplier and buyer remain responsible for their own transaction terms and applicable obligations.</p>
       <p>Members must not ship gemstones or jewellery unless they have received clear written instructions regarding the proposed shipment.</p>
 
       <h3>10. Identification and Privacy</h3>
@@ -2025,7 +2255,7 @@
       <p>Personal information and identification documents will be accessed only by authorized individuals or service providers involved in membership administration or verification.</p>
       <p>Identification documents will not be shared with potential buyers or referring members without permission, unless disclosure is required or permitted by law.</p>
       <p>Information will be retained only for as long as reasonably necessary for the stated purposes or applicable legal obligations.</p>
-      <p>Privacy-related questions may be directed to <a href="mailto:memberships@canadiangemtradeguild.ca">memberships@canadiangemtradeguild.ca</a>.</p>
+      <p>Membership and application communication is handled by email. Privacy-related questions may be directed to <a href="mailto:memberships@canadiangemtradeguild.ca">memberships@canadiangemtradeguild.ca</a>.</p>
 
       <h3>11. Confidentiality</h3>
       <p>Members must respect the confidentiality of information shared during the membership and purchasing process.</p>
@@ -2167,6 +2397,100 @@
         closeMembershipTermsModal();
       }
     });
+
+    const processCarousel = document.querySelector(".process-grid");
+    const processCards = processCarousel ? Array.from(processCarousel.querySelectorAll(".process-card")) : [];
+    const processPrev = document.getElementById("processPrev");
+    const processNext = document.getElementById("processNext");
+    let processFrame = null;
+    let processScrollTimer = null;
+    let processIndex = 0;
+
+    function updateProcessCarousel() {
+      if (!processCarousel || !processCards.length) return;
+      const bounds = processCarousel.getBoundingClientRect();
+      const center = bounds.left + bounds.width / 2;
+      const maxDistance = Math.max(bounds.width * 0.65, 1);
+
+      let closestIndex = 0;
+      let closestDistance = Infinity;
+
+      processCards.forEach((card, index) => {
+        const cardBounds = card.getBoundingClientRect();
+        const cardCenter = cardBounds.left + cardBounds.width / 2;
+        const rawDistance = Math.abs(cardCenter - center);
+        const distance = Math.min(rawDistance / maxDistance, 1);
+
+        if (rawDistance < closestDistance) {
+          closestDistance = rawDistance;
+          closestIndex = index;
+        }
+
+        card.style.setProperty("--card-blur", `${(distance * 3.5).toFixed(2)}px`);
+        card.style.setProperty("--card-opacity", `${(1 - distance * 0.45).toFixed(3)}`);
+        card.style.setProperty("--card-scale", `${(1 - distance * 0.035).toFixed(3)}`);
+      });
+
+      processIndex = closestIndex;
+    }
+
+    function requestProcessCarouselUpdate() {
+      if (processFrame) return;
+      processFrame = requestAnimationFrame(() => {
+        processFrame = null;
+        updateProcessCarousel();
+      });
+    }
+
+    function goToProcessIndex(index) {
+      if (!processCarousel || !processCards.length) return;
+      processIndex = (index + processCards.length) % processCards.length;
+      processCards[processIndex].scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "center"
+      });
+      requestProcessCarouselUpdate();
+    }
+
+    function moveProcess(direction) {
+      if (!processCards.length) return;
+      goToProcessIndex(processIndex + direction);
+    }
+
+    if (processCarousel) {
+      processCarousel.addEventListener("scroll", () => {
+        requestProcessCarouselUpdate();
+        if (processScrollTimer) clearTimeout(processScrollTimer);
+        processScrollTimer = setTimeout(() => {
+          updateProcessCarousel();
+        }, 80);
+      }, { passive: true });
+
+      // Let users freely scroll to the final card. Do not automatically wrap
+      // the carousel while scrolling; wrapping happens only through the buttons.
+      window.addEventListener("resize", requestProcessCarouselUpdate);
+      requestProcessCarouselUpdate();
+    }
+
+    if (processPrev) processPrev.addEventListener("click", () => moveProcess(-1));
+    if (processNext) processNext.addEventListener("click", () => moveProcess(1));
+
+    // Subtle entrance animation for major site sections.
+    const animatedSections = Array.from(document.querySelectorAll("main > section, footer.site-footer"));
+    if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      animatedSections.forEach((section) => section.classList.add("site-animate"));
+      const sectionObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.12 });
+      animatedSections.forEach((section) => sectionObserver.observe(section));
+    } else {
+      animatedSections.forEach((section) => section.classList.add("is-visible"));
+    }
 
   </script>
 </body>
