@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Canadian Gem Trade Guild — a trusted Canadian platform connecting gemstone suppliers and buyers." />
+  <meta name="description" content="Canadian Gem Trade Guild — a Canadian membership organization supporting responsible gemstone trade through verification, submissions and introductions." />
   <title>Canadian Gem Trade Guild</title>
   <link rel="icon" type="image/png" href="cgtg-nav-logo.png" />
   <link rel="apple-touch-icon" href="cgtg-nav-logo.png" />
@@ -1302,6 +1302,68 @@
         flex-direction: column;
       }
     }
+
+    .guild-role {
+      padding: 96px 0;
+      background: var(--silver-50);
+    }
+
+    .role-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 38px;
+    }
+
+    .role-card {
+      background: var(--white);
+      border: 1px solid var(--silver-200);
+      border-radius: var(--radius-lg);
+      padding: 34px;
+      box-shadow: 0 12px 35px rgba(3, 16, 31, 0.06);
+    }
+
+    .role-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--sapphire-900);
+      color: var(--white);
+      font-size: 20px;
+      margin-bottom: 18px;
+    }
+
+    .role-card h3 {
+      margin-bottom: 18px;
+    }
+
+    .role-list {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--silver-700);
+    }
+
+    .role-list li + li {
+      margin-top: 11px;
+    }
+
+    .role-note {
+      margin-top: 24px;
+      padding: 20px 24px;
+      border-left: 4px solid var(--sapphire-600);
+      background: var(--white);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      color: var(--silver-700);
+    }
+
+    @media (max-width: 800px) {
+      .role-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
   </style>
 </head>
 
@@ -1347,7 +1409,7 @@
         <div class="hero-kicker">A professional Canadian gemstone trade organization</div>
         <h1>Building greater trust in the <span>gemstone trade.</span></h1>
         <p>
-          The Canadian Gem Trade Guild is a professional membership organization supporting responsible gemstone trade through supplier membership, buyer verification and a clear Guild-managed process.
+          The Canadian Gem Trade Guild is a professional membership organization supporting responsible gemstone trade through supplier verification, gemstone submissions, buyer connections and practical Guild support.
         </p>
         <div class="hero-actions">
           <a href="/suppliers#supplier-membership" class="btn btn-primary">Explore Supplier Membership</a>
@@ -1362,7 +1424,7 @@
           <div class="trust-icon">◇</div>
           <div>
             <strong>Trust</strong>
-            <p>Membership and verification processes help protect the integrity of the Guild.</p>
+            <p>Membership and verification processes help establish trusted Guild membership.</p>
           </div>
         </article>
         <article class="trust-item">
@@ -1383,7 +1445,7 @@
           <div class="trust-icon">◎</div>
           <div>
             <strong>Guild Oversight</strong>
-            <p>Supplier submissions and buyer enquiries are managed through the Guild.</p>
+            <p>Supplier submissions and suitable opportunities are reviewed through the Guild.</p>
           </div>
         </article>
       </div>
@@ -1395,10 +1457,10 @@
           <div class="eyebrow">About the Guild</div>
           <h2 class="section-title">A professional organization for responsible gemstone trade.</h2>
           <p class="section-copy">
-            The Canadian Gem Trade Guild supports gemstone suppliers and qualified buyers through separate membership and verification processes. Suppliers present their gemstones and trading information to the Guild for review and purchasing consideration, while verified buyers communicate their gemstone interests and sourcing requirements directly to the Guild.
+            The Canadian Gem Trade Guild supports gemstone suppliers and interested buyers through structured membership, verification and submission processes. Approved suppliers can submit gemstone offerings to the Guild, and the Guild works to identify suitable opportunities based on buyer interest and market demand.
           </p>
           <p class="section-copy">
-            At this stage, suppliers and buyers do not communicate directly through the platform. The Guild manages enquiries, reviews suitable opportunities and supports a professional, transparent process.
+            When a suitable opportunity arises, the Guild may introduce the supplier and prospective buyer. After an introduction, the parties communicate and arrange any transaction directly with one another. The Guild can also work with members to improve the presentation of a submission when an offering does not attract interest.
           </p>
           <div class="about-actions">
             <a href="#membership" class="btn btn-primary">Explore Membership</a>
@@ -1414,7 +1476,7 @@
           <div class="eyebrow">Membership Options</div>
           <h2 class="section-title">Choose the right place to begin.</h2>
           <p class="section-copy">
-            Suppliers can progress through three professional membership levels, while qualified buyers may apply for verification and communicate their gemstone requirements through the Guild.
+            Suppliers can choose from three professional membership levels. Buyers can use the Buyers section to express their interest and communicate sourcing requirements to the Guild.
           </p>
         </div>
 
@@ -1437,8 +1499,8 @@
               </div>
               <ul class="plan-list">
                 <li>Official Associate Supplier Membership</li>
-                <li>Digital Membership ID</li>
-                <li>Submit gemstones for purchasing consideration</li>
+                <li>Digital Membership Card with member name, business name (if applicable), member ID and current membership period</li>
+                <li>Submit gemstone offerings to the Guild</li>
                 <li>Eligibility to apply for Verified Supplier status</li>
                 <li>Automatic annual renewal; cancel any time</li>
               </ul>
@@ -1457,8 +1519,8 @@
               <div class="plan-note">For suppliers with a proven Guild trading history</div>
               <ul class="plan-list">
                 <li>Official Verified Supplier Status</li>
-                <li>Physical Membership Card</li>
-                <li>Priority gemstone submission review</li>
+                <li>Digital Membership Card with member name, business name (if applicable), member ID and current membership period</li>
+                <li>Enhanced submission support</li>
                 <li>Trade mission and exhibition eligibility</li>
               </ul>
               <a href="/suppliers#supplier-membership" class="btn btn-primary">View Verified Membership</a>
@@ -1472,9 +1534,8 @@
               <div class="plan-note">Strategic partnership level</div>
               <ul class="plan-list">
                 <li>Guild Trade Partner Recognition</li>
-                <li>Premium Metal Membership Card</li>
-                <li>Highest priority for purchase reviews</li>
-                <li>Priority Guild opportunity invitations</li>
+                <li>Digital Membership Card with member name, business name (if applicable), member ID and current membership period</li>
+                <li>Enhanced consideration for relevant Guild opportunities</li>
                 <li>Canadian Business Establishment Program access</li>
               </ul>
               <a href="/suppliers#supplier-membership" class="btn btn-primary">View Trade Partner Membership</a>
@@ -1504,13 +1565,59 @@
       </div>
     </section>
 
+    <section class="guild-role" id="guild-role">
+      <div class="container">
+        <div class="section-heading-center">
+          <div class="eyebrow">Our Role</div>
+          <h2 class="section-title">We help create opportunities — without controlling private transactions.</h2>
+          <p class="section-copy">
+            The Guild works to do its best to connect members with relevant opportunities as market demand arises. If a submission does not attract interest, we may work with the supplier to improve how the offering is presented, including discussing factors such as pricing, available information, presentation or documentation.
+          </p>
+        </div>
+
+        <div class="role-grid">
+          <article class="role-card">
+            <div class="role-icon">✓</div>
+            <h3>What the Guild Does</h3>
+            <ul class="role-list">
+              <li>Verifies approved supplier identity and business information.</li>
+              <li>Provides an approved member with a digital membership card.</li>
+              <li>Guides members through the submission process.</li>
+              <li>Reviews gemstone submissions and supporting information.</li>
+              <li>Works to identify suitable buyer opportunities as they arise.</li>
+              <li>May introduce a member to a prospective buyer when a suitable opportunity exists.</li>
+              <li>May help members improve the presentation of an offering when buyer interest is limited.</li>
+              <li>Requires appropriate certification or supporting documentation for gemstones the Guild purchases for its own specific needs.</li>
+            </ul>
+          </article>
+
+          <article class="role-card">
+            <div class="role-icon">◇</div>
+            <h3>What the Guild Does Not Do</h3>
+            <ul class="role-list">
+              <li>Operate a public marketplace or public inventory of member goods.</li>
+              <li>Guarantee a specific number of introductions, inquiries, transactions or sales.</li>
+              <li>Set or guarantee a supplier's price.</li>
+              <li>Negotiate or complete private transactions on behalf of suppliers or buyers.</li>
+              <li>Guarantee the actions, payment, products or representations of another party.</li>
+              <li>Take a supplier commission on a private transaction resulting from a Guild introduction.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="role-note">
+          <strong>Supplier responsibility:</strong> Members are responsible for the accuracy and authenticity of the information, descriptions, certifications and documentation they provide. The Guild can help improve presentation, but cannot make an inaccurate or misleading submission accurate.
+        </div>
+      </div>
+    </section>
+
     <section class="pathways">
       <div class="container">
         <div class="section-heading-center">
           <div class="eyebrow">How It Works</div>
-          <h2 class="section-title">Two clear relationships, managed by the Guild.</h2>
+          <h2 class="section-title">A clear process for suppliers and buyers.</h2>
           <p class="section-copy">
-            Suppliers and buyers follow separate processes. The Guild reviews information, manages enquiries and communicates suitable opportunities with approved members.
+            Suppliers submit offerings to the Guild, while buyers can communicate their interests and sourcing requirements. When a suitable opportunity arises, the Guild may make an introduction. The parties then handle any private transaction directly with one another.
           </p>
         </div>
 
@@ -1518,7 +1625,7 @@
           <article class="pathway-card suppliers">
             <div class="pathway-content">
               <h3>For Gemstone Suppliers</h3>
-              <p>Build a professional relationship with the Guild, present your gemstones for purchasing consideration and progress through structured membership levels.</p>
+              <p>Build a professional relationship with the Guild, submit gemstone offerings, receive guidance on presentation and participate in the Guild membership process.</p>
               <a href="/suppliers#supplier-membership" class="btn btn-primary">Explore Supplier Membership</a>
             </div>
           </article>
@@ -1526,7 +1633,7 @@
           <article class="pathway-card buyers">
             <div class="pathway-content">
               <h3>For Qualified Buyers</h3>
-              <p>Apply for buyer verification, share your gemstone requirements and receive relevant opportunities through the Guild.</p>
+              <p>Contact the Guild with your gemstone interests or sourcing requirements. When a suitable opportunity exists, the Guild may connect you with an appropriate supplier.</p>
               <a href="/buyers#buyer-membership" class="btn btn-primary">Explore Buyer Membership</a>
             </div>
           </article>
@@ -1538,9 +1645,9 @@
       <div class="container newsletter-grid">
         <div>
           <div class="eyebrow">Guild Updates</div>
-          <h2 class="section-title">Stay informed about Guild gemstone opportunities.</h2>
+          <h2 class="section-title">Stay informed about Guild updates and opportunities.</h2>
           <p class="section-copy">
-            Receive selected Guild updates, gemstone sourcing opportunities, membership news and event announcements.
+            Receive selected Guild updates, market and sourcing opportunities, membership news and event announcements.
           </p>
         </div>
 
@@ -1548,7 +1655,7 @@
           <div class="newsletter-form">
             <a href="mailto:info@canadiangemtradeguild.ca?subject=Guild%20Updates%20Request" class="btn btn-primary">Request Guild Updates</a>
           </div>
-          <p class="form-note">Email the Guild to request selected membership, gemstone opportunity and event updates.</p>
+          <p class="form-note">Email the Guild to request selected membership, opportunity and event updates.</p>
         </div>
       </div>
     </section>
@@ -1588,7 +1695,7 @@
               <span>Building trust. Supporting responsible trade.</span>
             </div>
           </a>
-          <p>A Canadian membership organization supporting trust, transparency and responsible gemstone trade through supplier membership, buyer verification and Guild-managed opportunities.</p>
+          <p>A Canadian membership organization supporting trust, transparency and responsible gemstone trade through supplier membership, verification, submissions and introductions.</p>
         </div>
 
         <div class="footer-col">
@@ -1623,7 +1730,7 @@
     <div class="privacy-dialog" tabindex="-1">
       <button class="privacy-close" id="closePrivacyPolicy" type="button" aria-label="Close privacy policy">✕</button>
       <h2 id="privacyTitle">Privacy Policy</h2>
-      <p class="privacy-updated">Last updated: August 1, 2026</p>
+      <p class="privacy-updated">Last updated: September 29, 2026</p>
 
       <h3>Information we collect</h3>
       <p>We may collect information you provide through membership applications, contact forms, newsletter signups or direct communications, including your name, business name, email address, phone number and information about your gemstone or jewellery business. When reasonably necessary to verify an application, we may also request government-issued identification, business registration information or supporting product documentation.</p>
@@ -1653,18 +1760,18 @@
     <div class="privacy-dialog" tabindex="-1">
       <button class="privacy-close" id="closeMembershipTerms" type="button" aria-label="Close terms of membership">✕</button>
       <h2 id="membershipTermsTitle">Associate Supplier Membership Terms</h2>
-      <p class="privacy-updated">Last updated: August 1, 2026</p>
+      <p class="privacy-updated">Last updated: September 29, 2026</p>
 
       <h3>1. Membership Purpose</h3>
       <p>The Associate Supplier Membership program is operated by Canadian Gem Trade Guild. References to “the Guild,” “we,” “us,” or “our” mean Canadian Gem Trade Guild.</p>
-      <p>The Canadian Gem Trade Guild provides a structured membership program for gemstone and jewellery suppliers interested in exploring opportunities within the Canadian market.</p>
-      <p>The Guild acts as an intermediary between suppliers and potential buyers and may facilitate product submissions, evaluations and communication regarding potential purchasing opportunities.</p>
+      <p>The Guild provides a structured membership program for gemstone and jewellery suppliers interested in responsible participation in the Canadian gemstone trade.</p>
+      <p>The Guild verifies approved members, receives supplier submissions, reviews relevant information and may introduce suitable members to prospective buyers when an appropriate opportunity arises.</p>
 
       <h3>2. Membership Eligibility</h3>
       <p>Associate Supplier Membership is available to individuals and businesses involved in gemstone mining, trading, sourcing, manufacturing or jewellery production.</p>
-      <p>Applicants must provide accurate information about their identity, business activities and products.</p>
-      <p>Membership applications may require a valid referral code and supporting identification or business documentation.</p>
-      <p>Other membership tiers, including Verified Supplier and Partner Supplier memberships, may be subject to additional eligibility requirements, fees and separate terms and conditions.</p>
+      <p>Applicants must provide accurate information about their identity, business activities and submitted offerings.</p>
+      <p>Membership applications may require government-issued identification, business registration information or other supporting documentation.</p>
+      <p>Other membership tiers, including Verified Supplier and Guild Trade Partner memberships, may be subject to additional eligibility requirements, fees and separate terms and conditions.</p>
 
       <h3>3. Membership Fee</h3>
       <p>The current Associate Supplier Membership fee is CAD $99 per year. Membership pricing may be subject to change.</p>
@@ -1672,9 +1779,10 @@
       <p>Payment must be completed before the membership application is reviewed.</p>
       <p>Payment does not guarantee membership approval and does not represent a gemstone purchase, deposit, investment or guarantee of future business.</p>
 
-      <h3>4. Application Review</h3>
+      <h3>4. Application Review and Verification</h3>
       <p>Applications are reviewed by the Membership Committee.</p>
-      <p>Applicants may be asked to provide additional information or identification documents during the review process.</p>
+      <p>Applicants may be asked to provide additional information, government-issued identification, business documentation or other information needed to verify identity and business status.</p>
+      <p>Once approved, a member receives a digital membership card showing the member's name, business name where applicable, member ID number and current membership period.</p>
       <p>The Guild aims to provide an initial response within 12 business days of receiving a completed application. Additional time may be required if further information or verification is necessary.</p>
 
       <h3>5. Approval and Membership Period</h3>
@@ -1685,36 +1793,35 @@
       <h3>6. Refund Policy</h3>
       <p>If a membership application is declined, the membership fee will be refunded in full.</p>
       <p>After membership has been approved and activated, the annual membership fee is generally non-refundable, except where a refund is required by applicable law.</p>
-      <p>A lack of purchasing opportunities, product submissions, offers or completed sales does not automatically entitle a member to a refund.</p>
+      <p>A lack of introductions, inquiries, purchasing opportunities, product submissions or completed sales does not automatically entitle a member to a refund.</p>
 
-      <h3>7. No Guaranteed Purchases or Sales</h3>
-      <p>Membership does not guarantee:</p>
-      <ul class="terms-list">
-        <li>The purchase of any gemstone or jewellery.</li>
-        <li>A specific number of product evaluations or purchasing opportunities.</li>
-        <li>Direct introductions to buyers.</li>
-        <li>A minimum sales volume, purchase price or profit.</li>
-        <li>Market entry, business partnerships, immigration assistance or visa approval.</li>
-      </ul>
-      <p>Any purchasing opportunity depends on buyer requirements, product suitability, pricing, documentation, market conditions and other relevant considerations.</p>
+      <h3>7. Introductions and Market Opportunities</h3>
+      <p>The Guild makes reasonable efforts to identify suitable opportunities for members based on buyer interest, specific Guild needs, product suitability, pricing, documentation and market demand.</p>
+      <p>The Guild may introduce a member to a prospective buyer when a suitable opportunity arises. Membership does not guarantee a specific number of introductions, inquiries, transactions or sales.</p>
+      <p>The Guild may occasionally communicate a specific gemstone requirement when the Guild itself has a particular purchasing need. Such requests are separate from any general supplier submission process.</p>
+      <p>If a submission does not attract interest, the Guild may work with the supplier to improve how the offering is presented to the market. This may include discussing pricing, available information, presentation, documentation or other factors that could affect buyer interest.</p>
 
-      <h3>8. Product Information and Disclosure</h3>
-      <p>Members must provide accurate and complete information about products submitted for consideration. This includes, where applicable:</p>
+      <h3>8. Submission Information, Certification and Disclosure</h3>
+      <p>Members must provide accurate and complete information about gemstone offerings submitted to the Guild. This may include, where applicable:</p>
       <ul class="terms-list">
         <li>Gemstone type, weight and dimensions.</li>
         <li>Known treatments or enhancements.</li>
         <li>Whether a gemstone is natural, laboratory-grown, synthetic or imitation.</li>
         <li>Country of origin, when known.</li>
-        <li>Laboratory reports or certifications.</li>
-        <li>Product condition, availability and asking price.</li>
+        <li>Laboratory reports, certifications or other supporting documentation.</li>
+        <li>Condition, availability and asking price.</li>
       </ul>
-      <p>The Guild may decline to consider products where information is incomplete, misleading, unverifiable or inconsistent with applicable requirements.</p>
+      <p>The Guild may request additional documentation or clarification and may decline to consider a submission where information is incomplete, misleading, unverifiable or inconsistent with applicable requirements.</p>
+      <p>For gemstones the Guild purchases for its own specific needs, appropriate certification or supporting documentation is required before the Guild proceeds with the purchase.</p>
+      <p>Suppliers remain responsible for the accuracy and authenticity of the information and documentation they provide. The Guild's assistance with presentation does not constitute a certification or guarantee of the supplier's claims.</p>
 
-      <h3>9. Purchasing Arrangements</h3>
-      <p>The Guild facilitates communication and purchasing opportunities between suppliers and potential buyers.</p>
-      <p>Any purchase or sale must be agreed upon separately and may include additional terms regarding price, inspection, payment, shipping, insurance, customs and delivery.</p>
-      <p>Membership does not require the Guild or any buyer to purchase products.</p>
-      <p>Members must not ship gemstones or jewellery unless they have received clear written instructions regarding the proposed shipment.</p>
+      <h3>9. Private Transactions and Guild Role</h3>
+      <p>The Guild is not a public marketplace and does not generally act as a broker or complete private transactions between suppliers and buyers.</p>
+      <p>When the Guild makes an introduction, the supplier and buyer are responsible for communicating directly and deciding whether to enter into a transaction.</p>
+      <p>The parties are responsible for independently agreeing to price, inspection, payment, shipping, insurance, customs, delivery, warranties, returns, contracts, taxes and other transaction terms and obligations that may apply.</p>
+      <p>The Guild does not guarantee the actions, representations, payment, products, performance or contractual obligations of another party.</p>
+      <p>The Guild does not charge suppliers a commission on private transactions resulting from a Guild introduction.</p>
+      <p>Suppliers must not ship gemstones or jewellery unless they have received clear written instructions and have independently confirmed the terms of the proposed transaction.</p>
 
       <h3>10. Identification and Privacy</h3>
       <p>Applicants may be asked to provide government-issued identification or business registration information for identity verification, membership administration and fraud prevention.</p>
@@ -1729,7 +1836,7 @@
       <p>The Guild is not required to disclose the identities or contact information of potential buyers or other suppliers.</p>
 
       <h3>12. Use of Guild Name and Materials</h3>
-      <p>Members may use the Guild's name, logo, membership badges, digital IDs, membership cards, listings or other Guild materials only when authorized by the Guild and in accordance with any applicable conditions or guidelines.</p>
+      <p>Members may use the Guild's name, logo, membership badges, digital IDs, digital membership cards or other Guild materials only when authorized by the Guild and in accordance with any applicable conditions or guidelines.</p>
       <p>Members must not misrepresent their membership category, claim a verification or partnership status they have not received, or suggest that the Guild has endorsed a product, guaranteed a purchase or approved a business relationship without authorization.</p>
       <p>Use of the Guild's name or materials does not transfer ownership of the Guild's name, logo, website content or other intellectual property. Members must stop using Guild materials when their membership is suspended or terminated, or when the Guild withdraws its authorization.</p>
 
